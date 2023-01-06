@@ -1,7 +1,7 @@
 {
   "name": "ocproject-jn-date-picker-react",
   "license": "UNLICENSED",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
