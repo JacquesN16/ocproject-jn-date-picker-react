@@ -15,19 +15,32 @@ class DatePicker extends React.Component {
         };
     }
 
-    handleClick = event => {
+    handleClick = (
+        event
+    ) => {
         event.preventDefault();
         event.target.blur();
         this.setState({ isCalendarOpen: !this.state.isCalendarOpen });
     };
 
-    handleDatePick = date => {
+    handleDatePick = (
+        date
+    ) => {
         this.setState({
             isCalendarOpen: false,
             selectedDate: date
         });
         this.props.onDatePick(date);
     };
+
+    handleClear = (e) =>{
+        e.stopPropagation()
+        this.setState({
+            isCalendarOpen: false,
+            selectedDate: ""
+        })
+        this.props.onDatePick("");
+    }
 
     render() {
         const { onDatePick, dateFormat } = this.props;
@@ -42,6 +55,9 @@ class DatePicker extends React.Component {
                         placeholder="Select Date"
                         value={selectedDate && dateFns.format(selectedDate, dateFormat)}
                     />
+                    <button
+                        aria-label='delete item'
+                        onClick={this.handleClear} type='button'>X</button>
                 </div>
                 {isCalendarOpen &&
                     <Calendar

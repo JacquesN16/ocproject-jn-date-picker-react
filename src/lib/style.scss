@@ -47,6 +47,14 @@ $calendar-padding: 10px;
     position: absolute;
 }
 
+.date-picker__clear_button{
+    background-color: #FFFFFF;
+    margin-right: 16px;
+    height: 24px;
+    width: 24px;
+    border: none;
+}
+
 .calendar {
     box-sizing: border-box;
     width: inherit;
@@ -135,3 +143,4 @@ $calendar-padding: 10px;
     font-weight: bold;
     color: $font-color-emphasis;
 }
+
