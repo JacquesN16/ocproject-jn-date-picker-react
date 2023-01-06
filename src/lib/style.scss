@@ -1,0 +1,137 @@
+$line-color: #000;
+$font-color: $line-color;
+$font-color-emphasis: #F8CA00;
+$highlight-color-background: lighten(#8A9B0F, 5%);
+$app-color-background: darken(#490A3D, 7%);
+$calendar-color-background: #BD1550;
+$calendar-color-alt-background: #E97F02;
+$calendar-padding: 10px;
+
+.date-picker {
+    position: relative;
+    color: $font-color;
+    width: 240px;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.date-picker__date-selection {
+    padding: 10px;
+    font-size: 24px;
+    display: flex;
+    cursor: pointer;
+}
+
+.date-picker__input {
+    width: 100%;
+    font-size: 16px;
+    font-family: inherit;
+    margin-left: 1em;
+    border: none;
+    border-bottom: 2px solid $line-color;
+    cursor: inherit;
+    background: inherit;
+    color: inherit;
+
+&:focus {
+     outline: none;
+ }
+
+&::placeholder {
+     color: inherit;
+     opacity: 0.7;
+ }
+}
+
+.date-picker__calendar {
+    position: absolute;
+}
+
+.calendar {
+    box-sizing: border-box;
+    width: inherit;
+    min-height: 17em;
+    padding: $calendar-padding;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: $font-color;
+    font-size: 14px;
+    border: 1px solid $line-color;
+    border-radius: 5px;
+    user-select: none;
+    background: $calendar-color-background;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.calendar__controls-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 0.5em;
+    font-weight: bold;
+
+.fas {
+    cursor: pointer;
+}
+}
+
+.calendar__controls {
+    align-self: stretch;
+    display: flex;
+
+.fas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+}
+
+.calendar__week,
+.calendar__days-of-week {
+    display: flex;
+    justify-content: space-between;
+}
+
+.calendar__days-of-week {
+    font-weight: bold;
+    border-bottom: 1px solid $line-color;
+    border-top: 1px solid $line-color;
+    margin-bottom: 0.5em;
+    margin-left: -$calendar-padding;
+    margin-right: -$calendar-padding;
+    padding: 0 $calendar-padding;
+    background: $calendar-color-alt-background;
+}
+
+.calendar__day,
+.calendar__day-of-week,
+.calendar__month-with-year,
+.calendar__controls .fas {
+    text-align: center;
+    min-width: 1.2em;
+    padding: 0.2em;
+}
+
+.calendar__day,
+.calendar__month-with-year,
+.calendar__controls .fas {
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s;
+
+&:hover {
+     background: $highlight-color-background;
+ }
+}
+
+.calendar__day--pale {
+    color: rgba($font-color, 0.5);
+}
+
+.calendar__day--emphasize {
+    font-weight: bold;
+    color: $font-color-emphasis;
+}

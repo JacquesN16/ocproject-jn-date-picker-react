@@ -1,0 +1,22 @@
+
+
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: #fff
+}
+
+#app {
+  margin-top: 30vh;
+  height: 100%;
+}
+
+
