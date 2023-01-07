@@ -1,10 +1,9 @@
 $line-color: #000;
 $font-color: $line-color;
 $font-color-emphasis: #F8CA00;
-$highlight-color-background: lighten(#8A9B0F, 5%);
-$app-color-background: darken(#490A3D, 7%);
-$calendar-color-background: #BD1550;
-$calendar-color-alt-background: #E97F02;
+$highlight-color-background: lighten(#808080, 5%);
+$calendar-color-background: #FFF;
+$calendar-color-alt-background: #F1F1F1;
 $calendar-padding: 10px;
 
 .date-picker {
@@ -45,6 +44,14 @@ $calendar-padding: 10px;
 
 .date-picker__calendar {
     position: absolute;
+}
+
+.date-picker__clear_button{
+    background-color: #FFFFFF;
+    margin-right: 16px;
+    height: 24px;
+    width: 24px;
+    border: none;
 }
 
 .calendar {
@@ -135,3 +142,4 @@ $calendar-padding: 10px;
     font-weight: bold;
     color: $font-color-emphasis;
 }
+
