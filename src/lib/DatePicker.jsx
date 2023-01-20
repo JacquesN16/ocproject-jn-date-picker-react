@@ -47,7 +47,10 @@ class DatePicker extends React.Component {
         const { isCalendarOpen, selectedDate } = this.state;
 
         return (
-            <div className="date-picker">
+            <div
+                className="date-picker"
+                style={{color: this.props.color ? this.props.color : '#000'}}
+            >
                 <div className="date-picker__date-selection" onClick={this.handleClick}>
                     <input
                         className="date-picker__input"
@@ -64,6 +67,8 @@ class DatePicker extends React.Component {
                         className="date-picker__calendar"
                         date={selectedDate || new Date()}
                         onDatePick={this.handleDatePick}
+                        background={this.props.background}
+                        altBackground={this.props.altBackground}
                     />
                 }
             </div>

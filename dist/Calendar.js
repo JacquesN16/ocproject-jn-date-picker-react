@@ -54,7 +54,10 @@ class Calendar extends React.Component {
   }
   renderDaysOfWeek() {
     return /*#__PURE__*/React.createElement("div", {
-      className: "calendar__days-of-week"
+      className: "calendar__days-of-week",
+      style: {
+        background: this.props.altBackground ? this.props.altBackground : '#F1F1F1'
+      }
     }, ['M', 'T', 'W', 'T', 'F', 'S', 'S'].map((letter, i) => /*#__PURE__*/React.createElement("div", {
       className: "calendar__day-of-week",
       key: i
@@ -73,7 +76,10 @@ class Calendar extends React.Component {
   render() {
     const weeksWithDaysInside = getDaysByWeek(getDaysForCalendar(this.state.date));
     return /*#__PURE__*/React.createElement("div", {
-      className: classNames('calendar', this.props.className)
+      className: classNames('calendar', this.props.className),
+      style: {
+        background: this.props.background ? this.props.background : '#FFF'
+      }
     }, this.renderControls(), this.renderDaysOfWeek(), weeksWithDaysInside.map((week, i) => /*#__PURE__*/React.createElement("div", {
       className: "calendar__week",
       key: i

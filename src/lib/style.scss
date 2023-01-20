@@ -8,7 +8,6 @@ $calendar-padding: 10px;
 
 .date-picker {
     position: relative;
-    color: $font-color;
     width: 240px;
     box-sizing: border-box;
     font-family: 'Nunito Sans', sans-serif;
@@ -67,7 +66,6 @@ $calendar-padding: 10px;
     border: 1px solid $line-color;
     border-radius: 5px;
     user-select: none;
-    background: $calendar-color-background;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     font-family: 'Nunito Sans', sans-serif;
 }
@@ -110,7 +108,7 @@ $calendar-padding: 10px;
     margin-left: -$calendar-padding;
     margin-right: -$calendar-padding;
     padding: 0 $calendar-padding;
-    background: $calendar-color-alt-background;
+
 }
 
 .calendar__day,

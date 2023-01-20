@@ -11,7 +11,10 @@ import './style.scss'
 class Calendar extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { date: props.date };
+        this.state = {
+            date: props.date
+        };
+
     }
 
     addMonth = () => this.setState({ date: dateFns.addMonths(this.state.date, 1) });
@@ -19,6 +22,7 @@ class Calendar extends React.Component {
     addYear = () => this.setState({ date: dateFns.addYears(this.state.date, 1 ) });
     subYear = () => this.setState({ date: dateFns.subYears(this.state.date, 1 ) });
     showCurrentDate = () => this.setState({ date: new Date() });
+
 
     renderControls() {
         const { date } = this.state;
@@ -43,8 +47,13 @@ class Calendar extends React.Component {
     }
 
     renderDaysOfWeek() {
+
+
         return (
-            <div className="calendar__days-of-week">
+            <div
+                className="calendar__days-of-week"
+                style={{background: this.props.altBackground ? this.props.altBackground : '#F1F1F1'}}
+            >
                 {['M', 'T', 'W', 'T', 'F', 'S', 'S'].map((letter, i) => (
                     <div className="calendar__day-of-week" key={i}>{letter}</div>
                 ))}
@@ -74,7 +83,9 @@ class Calendar extends React.Component {
         const weeksWithDaysInside = getDaysByWeek(getDaysForCalendar(this.state.date));
 
         return (
-            <div className={classNames('calendar', this.props.className)}>
+            <div
+                className={classNames('calendar', this.props.className)}
+                style={{background: this.props.background ? this.props.background : '#FFF' }}>
                 {this.renderControls()}
                 {this.renderDaysOfWeek()}
                 {weeksWithDaysInside.map((week, i) => (

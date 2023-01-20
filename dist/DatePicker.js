@@ -45,7 +45,10 @@ class DatePicker extends React.Component {
       selectedDate
     } = this.state;
     return /*#__PURE__*/React.createElement("div", {
-      className: "date-picker"
+      className: "date-picker",
+      style: {
+        color: this.props.color ? this.props.color : '#000'
+      }
     }, /*#__PURE__*/React.createElement("div", {
       className: "date-picker__date-selection",
       onClick: this.handleClick
@@ -61,7 +64,9 @@ class DatePicker extends React.Component {
     }, "X")), isCalendarOpen && /*#__PURE__*/React.createElement(Calendar, {
       className: "date-picker__calendar",
       date: selectedDate || new Date(),
-      onDatePick: this.handleDatePick
+      onDatePick: this.handleDatePick,
+      background: this.props.background,
+      altBackground: this.props.altBackground
     }));
   }
 }
